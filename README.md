@@ -1,11 +1,17 @@
 # Ex02 Django ORM Web Application
-## Date: 18-09-2024 
+## Date:10.04.2025
+
+NAME : GURU REVANTH KUMARAVEL RADHIKA
+
+
+REG NO : 212223230065
+
 
 ## AIM
-To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
+To develop a Django application to store and retrieve data from a Movies Database using Object Relational Mapping(ORM).
 
 ## ENTITY RELATIONSHIP DIAGRAM
-![alt text](image.png)
+
 
 
 ## DESIGN STEPS
@@ -23,33 +29,36 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
-### admin.py
-```python
-from django.contrib import admin
-from .models import Bankloan,BankloanAdmin
-admin.site.register(Bankloan,BankloanAdmin)
-```
-### models.py
-```python
+
+~~~
+models.py
+
+
 from django.db import models
 from django.contrib import admin
-class Bankloan (models.Model):
-    Loanid=models.IntegerField(primary_key=True);
-    Name=models.CharField(max_length=100);
-    Accountno=models.IntegerField();
-    Salary=models.IntegerField();
-    Loanamt=models.IntegerField();
+class Movie(models.Model):
+    mid=models.IntegerField()
+    mname=models.CharField(max_length=100)
+    collection=models.IntegerField()
+    year=models.IntegerField()
+    rating=models.FloatField()
 
-class BankloanAdmin(admin.ModelAdmin):
-    list_display=('Loanid','Name','Accountno','Salary','Loanamt')
-```
+class MovieAdmin(admin.ModelAdmin):
+    list_display=('mid','mname','collection','year','rating')
 
 
+admin.py
+
+
+from django.contrib import admin
+from .models import Movie,MovieAdmin
+admin.site.register(Movie,MovieAdmin)
+~~~
 
 
 ## OUTPUT
 
-![alt text](image-3.png)
+![Screenshot 2025-04-12 223329](https://github.com/user-attachments/assets/3e631ef1-78e9-47f0-b789-1014afa24f61)
 
 ## RESULT
-Thus the program for creating a database using ORM hass been executed successfully
+Thus the program for creating movies database using ORM hass been executed successfully
