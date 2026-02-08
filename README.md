@@ -23,28 +23,37 @@ Execute Django admin and create details for 10 cars
 # PROGRAM
 ```
 admin.py
-
 from django.contrib import admin
-from .models import Book, BookAdmin
-admin.site.register(Book, BookAdmin)
+
+from.models import Car,CarAdmin
+
+admin.site.register(Car,CarAdmin)
+
+#Resgister your models here.
 
 models.py
-
 from django.db import models
 from django.contrib import admin
 
-class Book(models.Model):
-  Name= models.CharField(max_length=100)
-  Email= models.EmailField()
-  Book_No= models.CharField(max_length=100)
-  Book_Name= models.CharField(max_length=100)
-  Address= models.CharField(max_length=255)
-  Phone_No= models.CharField(max_length=15)
-class BookAdmin(admin.ModelAdmin):
-    list_display = ('Name','Email','Book_No','Book_Name','Address','Phone_No')
+class Car(models.Model):
+    car_brand = models.CharField()
+    car_model = models.CharField()
+    year = models.DateField()
+    color = models.CharField()
+    engine_type = models.CharField()
+    fuel_type = models.CharField()
+    transmission = models.CharField()
+    seating_capacity = models.IntegerField()
+    price = models.CharField()m
+    description = models.TextField()
+
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('car_brand', 'car_model', 'year', 'color', 'engine_type', 'fuel_type', 'transmission', 'seating_capacity', 'price', 'description')
 ```
+
 # OUTPUT
-<img width="1920" height="1126" alt="22" src="https://github.com/user-attachments/assets/290738c1-cd9e-444e-89f8-5ad755afb27b" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2648a729-f4c2-48d4-ace0-ec28bfd50919" />
 
 # RESULT
 Thus the program for creating a database using ORM hass been executed successfully
